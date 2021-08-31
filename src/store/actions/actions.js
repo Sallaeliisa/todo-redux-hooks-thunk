@@ -32,7 +32,8 @@ export const toggleTodo = (id) => ({
 
 export const updateNotes = (id) => {
     return async (dispatch) => {
-        const notes = await removeNote(id);
+        await removeNote(id);
+        const notes = await getAll();
         dispatch({
             type: REMOVE_NOTE,
             data: notes,
