@@ -13,3 +13,8 @@ export const createNew = async (text) => {
     return response.data;
 };
 
+export const removeNote = async (id) => {
+    const response = await axios.delete(`${baseUrl}/${id}`);
+    return response.data;
+}
+

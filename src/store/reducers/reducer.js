@@ -13,27 +13,12 @@ const reducer = (state = [], action) => {
         completed: !noteToChange.completed,
       };
       return state.map((note) => (note.id !== action.id ? note : changeNote));
+    case actionTypes.REMOVE_NOTE:
+      return action.data;
 
     default:
       return state;
   }
 };
-
-// const initialState = {
-//   notes: [
-//     {
-//       id: 1,
-//       text: "something",
-//       completed: false,
-//     },
-//   ],
-//   TextDecoderStream: [
-//     {
-//       id: 2,
-//       text: "something else",
-//       completed: false,
-//     },
-//   ],
-// };
 
 export default reducer;
